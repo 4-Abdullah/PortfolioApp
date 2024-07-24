@@ -10,8 +10,9 @@ const Card = ({ title, description, imageSrc }) => {
   return (
   
     <HStack >
-      <VStack className="Card_style">
-        <Image src={imageSrc} className="cardimg_style"/>
+      <VStack  className="Card_style">
+        <Image src={imageSrc} border-radius="10px"
+    width="100%" />
         <div className='div_style'> 
         <Heading size='md' p={'5px'} >{title}</Heading>
         <Text className="text_style" p={'5px'}>{description}</Text>
