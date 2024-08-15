@@ -35,9 +35,9 @@ const socials = [
 
 const Header = () => {
 
-  // const [scrollingUp, setScrollingUp] = useState(0);
+  const [scrollingUp, setScrollingUp] = useState(0);
 
-  // const headerRef = useRef(null);
+  const headerRef = useRef(null);
 
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
@@ -50,26 +50,26 @@ const Header = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollY = window.scrollY;
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-  //     if (headerRef.current){
-  //       if (currentScrollY > scrollingUp) {
-  //         headerRef.current.style.transform = "translateY(-200px)";
-  //       } else {
-  //         headerRef.current.style.transform = "translateY(0)";
-  //       }
-  //     }
-  //     setScrollingUp(currentScrollY);
-  //   };
+      if (headerRef.current){
+        if (currentScrollY > scrollingUp) {
+          headerRef.current.style.transform = "translateY(-200px)";
+        } else {
+          headerRef.current.style.transform = "translateY(0)";
+        }
+      }
+      setScrollingUp(currentScrollY);
+    };
 
-  //   window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-  //   return() => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [scrollingUp]);
+    return() => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollingUp]);
  
   return (
     <Box 
@@ -80,7 +80,7 @@ const Header = () => {
       translateY={0}
       backgroundColor="#18181b"
       zIndex={10}
-      // ref={headerRef}
+      ref={headerRef}
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
