@@ -37,6 +37,8 @@ const ContactMeSection = () => {
     )
     .then(() => {
       console.log('SUCCESS!');
+      formik.resetForm(); 
+
     }, (error) => {
       console.log('FAILED...', error.text);
     });
